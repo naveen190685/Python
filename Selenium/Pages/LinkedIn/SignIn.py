@@ -1,7 +1,15 @@
-from selenium.webdriver.remote import webelement
-from selenium.webdriver.common.by import By
+class SignIn:
 
+    __browser = None
 
-class Landing():
-    EmailOrPhone = "linktext: Sign in"
-    Join_Now = "linktext: Join now"
+    def __init__(self, browser):
+        self.__browser = browser
+
+    __EmailOrPhone = "username"
+    __Password = "password"
+
+    def enterEmail(self, mailOrPhone):
+        self.__browser.write(self.__EmailOrPhone, mailOrPhone)
+
+    def enterPassword(self, password):
+        self.__browser.write(self.__Password, password)

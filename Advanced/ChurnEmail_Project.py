@@ -1,5 +1,5 @@
 myFile = 'C:/Users/navkumar16/PycharmProjects/Practise/Programs/Basics/Resources/ChurnEmail.txt'
-handle = open('C:/Users/navkumar16/PycharmProjects/Practise/Programs/Basics/Resources/ChurnEmail.txt', 'r')
+handle = open('/Programs/Basics/Resources/ChurnEmail.txt', 'r')
 
 
 # content = handle.read()
