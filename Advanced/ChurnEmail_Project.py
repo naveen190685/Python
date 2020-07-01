@@ -76,7 +76,7 @@ print(f'Email sender with counts: {find_email_sender()}')
 def message_from_domain():
     domain = dict()
     mail_details = find_email_sender()
-    for email in mail_details:
+    for email in mail_d;etails:
         dom = email.split("@")[1]
         if dom not in domain:
             domain[dom] = 0

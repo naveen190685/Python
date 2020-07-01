@@ -1,7 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import ElementClickInterceptedException
+from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.remote import webelement
+from selenium.webdriver.support import expected_conditions
 
 # See examples at: https://github.com/SergeyPirogov/webdriver_manager/tree/master/tests
 
@@ -9,11 +11,12 @@ from selenium.webdriver.remote import webelement
 class Helper:
     driver = None
     element = None
-
+    # key: str
     def open_chrome(self):
         from webdriver_manager.chrome import ChromeDriverManager
         # self.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install())
         self.driver = webdriver.Chrome(executable_path="C:/Jenkins/chromedriver.exe")
+
 
     def open_firefox(self):
         from webdriver_manager.firefox import GeckoDriverManager
@@ -35,7 +38,9 @@ class Helper:
             return self.driver.find_elements(by)
 
     def click(self, locator):
-        if len(locator.split(":")) == 1:
+        if isinstance(locator, By):
+            self.find_element(locator).click()
+        elif len(locator.split(":")) == 1:
             self.clickWithSingleLocator(locator)
         else:
             self.click(self.getLocator(locator))
@@ -45,20 +50,20 @@ class Helper:
         by = None
         key = locator.split(":")
         if len(key) == 1:
-            by = By.id(locator)
+            by = By.ID(locator)
         elif len(key) == 2:
-            key[0] = key[0].toLowerCase()
-            key[1] = key[1].trim()
+            key[0] = key[0].lower()
+            key[1] = key[1].strip()
         if key[0] == "id":
-            by = By.id(key[1])
+            by = By.ID(key[1])
         if key[0] == "name":
-            by = By.name(key[1])
+            by = By.NAME(key[1])
         if key[0] == "xpath":
-            by = By.xpath(key[1])
+            by = By.XPATH(key[1])
         if key[0] == "linktext":
-            by = By.linkText(key[1]);
+            by = By.LINK_TEXT(key[1])
         elif key[0] == "particallinktext":
-            by = By.partialLinkText(key[1])
+            by = By.PARTIAL_LINK_TEXT(key[1])
         else:
             print("NO LOCATOR MATCHED")
         return by
@@ -94,11 +99,15 @@ class Helper:
     def write(self, content):
         webElement = self.driver.switch_to.active_element
         tagIsInput = webElement.get_attribute("tagName").lower() == "input"
-        isElementVisible = webElement.get_attribute("type").lower() != "hidden"
+        isElementVisible = False
+        if webElement.get_attribute("type") is not None:
+            isElementVisible = webElement.get_attribute("type").lower() != "hidden"
         if tagIsInput and isElementVisible:
             webElement.send_keys(content)
         else:
             self.driver.find_element_by_xpath("//input[@type!='hidden']").send_keys(content)
+        # WebDriverWait(self.driver, 5).until(expected_conditions.pa)
+
 
     def closeBrowser(self):
         self.driver.close()
