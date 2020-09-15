@@ -1,5 +1,5 @@
-myList = [5, "who", 2, 4, "how"]
-str = "Just created list: {}".format(myList)
+dependencyGuide = [5, "who", 2, 4, "how"]
+str = "Just created list: {}".format(dependencyGuide)
 print(str)
 print("Printing from index 3 to 9th place using str[3:9]")
 print(str[3:9])
@@ -99,16 +99,22 @@ if "na" in fruit:
 print(fruit < "apple")
 print(fruit < "xxxxx")
 
-
+#Below program is to
+#Reverse every word of a sentence
 def str_list_func(str):
     temp = ""
     myRstring = ""
     delimiter = ""
     myList = str.split(" ")
+    #Take every word one by one
     for myStr in myList:
+        #Story all characters in a list
         mysList = list(myStr)
+        #Store the 1st character
         temp = mysList[0]
+        #Swap the 1st character with last character
         mysList[0] = mysList[len(mysList)-1]
+
         mysList[len(mysList)-1] = temp
         myRstring = myRstring + " " + delimiter.join(mysList)
     return myRstring.strip()

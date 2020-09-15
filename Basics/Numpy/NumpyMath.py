@@ -1,0 +1,46 @@
+import numpy as np
+from numpy import linalg
+
+myArray = np.array([[1, 2, 3], [4, 5, 6]])
+print(myArray)
+print(f'Sum of all elements using myArray.sum()=> {myArray.sum()}')
+print(f'Adding column wise using myArray.sum(axis=0) =>')
+print(myArray.sum(axis=0))
+print(f'Adding along axis 0 is same as sum(myArray)=> {sum(myArray)}')
+print(f'Adding row wise using myArray.sum(axis=1) =>')
+print(myArray.sum(axis=1))
+print(f'Reshaping array with myArray.reshape(3,2) =>')
+print(myArray.reshape(3,2))
+
+c = np.arange(24).reshape(2,3,4)
+print(f'\nc = {c}')
+print(f'c.sum(axis=0) => \n {c.sum(axis=0)}')
+print(f'\n\nc = {c}')
+print(f'\nc.sum(axis=1) => \n {c.sum(axis=1)}')
+
+firstArray = np.array([3,6,4])
+print(f'firstArray = {firstArray}')
+secondArray = np.array([2,5,9])
+print(f'secondArray = {secondArray}')
+print(f'Adding both using np.add(firstArray, secondArray) =>')
+sumArray = np.add(firstArray, secondArray)
+print(sumArray)
+
+
+print(f'\n\n//////////////////    TRANSPOSING A MATRIX    /////////////////////')
+print(f'              i.e. rows to columns, columns to rows')
+myArray = np.arange(6).reshape(2,3)
+print(f'myArray => \n{myArray}')
+print(f'Tranposing myArray with myArray.T => \n{myArray.T}')
+
+print(f'\n\n////////////   SOLVING LINEAR ALGEBRA PROBLEMS   //////////////')
+print(f'Problem: ')
+print(f'\t2x+6y = 6')
+print(f'\t5x+3y = -9')
+print(f'My matrixs')
+firstM = np.array([[2,6],[5,3]])
+print(f'\t firstM => \n{firstM}')
+secondM = np.array([6,-9])
+print(f'\t secondM => \n{secondM}')
+solution = linalg.solve(firstM, secondM)
+print(f'Solving x and y with linalg.solve(firstM, secondM) => {solution}')

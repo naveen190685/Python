@@ -1,12 +1,12 @@
 
-myList = [5, "who", 2, 4, "how"]
-myString = "Just created list: {}".format(myList)
+dependencyGuide = [5, "who", 2, 4, "how"]
+myString = "Just created list: {}".format(dependencyGuide)
 print(myString)
 
 # f' can be used when want to include anything other than string type
 # Just need to have it in "{}" brackets
 # And it will be automatically taken care
-print("with F'"+f'List is {myList}')
+print("with F'" +f'List is {dependencyGuide}')
 
 num = 6
 print(f'Just printing the number: {num}')
@@ -25,5 +25,5 @@ print("My name is %s and weight is %d kg!" % ('Zara', 21))
 print("My name is " + Name + " and weight is " + str(21) + " Kg. Clas: " + str(Class) + " Rollno.: " + str(rollNumber))
 
 #Printing a collection with seperators
-print(myList, "<-- MySeperatorAsPrefix", sep="$$")
+print(dependencyGuide, "<-- MySeperatorAsPrefix", sep="$$")
 

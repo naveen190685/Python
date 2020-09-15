@@ -85,7 +85,7 @@ class Browser:
         caps["pageLoadStrategy"] = "normal"  # complete
         # caps["pageLoadStrategy"] = "eager"  #  interactive
         # caps["pageLoadStrategy"] = "none"
-        self.driver = webdriver.Firefox(desired_capabilities=caps, executable_path=GeckoDriverManager().install())
+        self.driver = webdriver.Firefox(desired_capabilities=caps, executable_path=GeckoDriverManager().localDependency())
 
     def open_ie(self):
         from webdriver_manager.microsoft import IEDriverManager
@@ -93,7 +93,7 @@ class Browser:
         caps["pageLoadStrategy"] = "normal"  # complete
         # caps["pageLoadStrategy"] = "eager"  #  interactive
         # caps["pageLoadStrategy"] = "none"
-        self.driver = webdriver.Ie(desired_capabilities=caps, executable_path=IEDriverManager().install())
+        self.driver = webdriver.Ie(desired_capabilities=caps, executable_path=IEDriverManager().localDependency())
 
     def open_edge(self):
         from webdriver_manager.microsoft import IEDriverManager
@@ -101,7 +101,7 @@ class Browser:
         caps["pageLoadStrategy"] = "normal"  # complete
         # caps["pageLoadStrategy"] = "eager"  #  interactive
         # caps["pageLoadStrategy"] = "none"
-        self.driver = webdriver.Ie(desired_capabilities=caps, executable_path=IEDriverManager().install())
+        self.driver = webdriver.Ie(desired_capabilities=caps, executable_path=IEDriverManager().localDependency())
 
     def goTo(self, url):
         self.driver.get(url)

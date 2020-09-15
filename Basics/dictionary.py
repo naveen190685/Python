@@ -3,6 +3,8 @@ almera = {}
 #or
 almera1 = dict()
 
+print(f'Check if almera1 dictionary is empty: {almera1 is False}')
+
 #Can give values while declaring as well
 almera2 = {1: "cloths", "second": "articles"}
 #Values can be later added as

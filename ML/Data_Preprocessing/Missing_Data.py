@@ -6,7 +6,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 
 print(os.getcwd())
-dataset = pd.read_csv("C:/Users/navkumar16/PycharmProjects/Practise/Programs/ML/Data_Preprocessing/Data.csv")
+dataset = pd.read_csv("Data.csv")
 # dataset = pd.read_csv("//Data.csv")
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values

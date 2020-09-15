@@ -20,11 +20,11 @@ class Helper:
 
     def open_firefox(self):
         from webdriver_manager.firefox import GeckoDriverManager
-        self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+        self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().localDependency())
 
     def open_ie(self):
         from webdriver_manager.microsoft import IEDriverManager
-        self.driver = webdriver.Ie(executable_path=IEDriverManager().install())
+        self.driver = webdriver.Ie(executable_path=IEDriverManager().localDependency())
 
     def goTo(self, url):
         self.driver.get(url)

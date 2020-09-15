@@ -1,23 +1,23 @@
 from symbol import for_stmt
 from traceback import format_list
-myList = [5, "who", 2, 4, "how"]
-print(f'myList = {myList}')
+dependencyGuide = [5, "who", 2, 4, "how"]
+print(f'myList = {dependencyGuide}')
 
 #Appending elements to the list
 print("Appended list")
-myList.append(8)
-myList.append("where")
-print(f'myList: {myList}')
+dependencyGuide.append(8)
+dependencyGuide.append("where")
+print(f'myList: {dependencyGuide}')
 
 #Take out some element by index
 list = [2,4,8,1,0,9,6]
-del myList[3]
+del dependencyGuide[3]
 #Trying to pop out "where" from the list
 #as pop out just happened at index 2 the index of "where"
 #is updated from 6 to 5
-myList.pop(5)
+dependencyGuide.pop(5)
 print("After pop out from list")
-print(f'myList: {myList}')
+print(f'myList: {dependencyGuide}')
 
 #Delete a known element
 list =["abd", "cdi", "dlf"]
@@ -26,9 +26,9 @@ list.remove("cdi") # This returns None
 #Merging lists
 mySecList= ["k", 3, 9, "u"]
 print(f'New list: {mySecList}')
-myList = myList+mySecList
+dependencyGuide = dependencyGuide + mySecList
 print("Merged List:")
-print(f'myList = {myList}')
+print(f'myList = {dependencyGuide}')
 
 #Sorting list
 myNumericList = [3,4,8,2,0]

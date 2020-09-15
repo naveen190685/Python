@@ -10,13 +10,13 @@ print(myTuple)
 
 print("You can have tuple on the left-hand side of the assignment as well.")
 print(f'myList = [1,2,3]')
-myList = [1, 2, 3]
+dependencyGuide = [1, 2, 3]
 print(f'(a,b,c) = myList')
-(a, b, c) = myList
+(a, b, c) = dependencyGuide
 print(f'Values in tuple (a, b, c) = {(a, b, c)}')
 print(f'Below is also valid')
 print(f'\td, e, f = myList')
-d, e, f = myList
+d, e, f = dependencyGuide
 print(f'Values in tuple d, e, f = {d, e, f}')
 
 print(f'For swapping a, b we can also do')

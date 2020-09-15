@@ -1,5 +1,4 @@
 import numpy as np
-tup_dim = (3, 4)
 
 array=[2,3,5,7,8,9]
 print(f'array: {array}')
@@ -17,8 +16,10 @@ array[1:3] = -1
 print(array)
 
 my_reshaped_array = np.reshape(array,(2,3))
+
 print("******************Reshaping the array to 2 x 3 matrix using np.reshape(array,(2,3))")
 print(my_reshaped_array)
+print("The same could be achieved with array.reshape(2,3) where is array is of type ndarray")
 
 print("\n\n*******************************Slicing the array, original array get impacted example")
 array = np.array([1,2,5,7,8])
@@ -53,6 +54,7 @@ print(array)
 print(f'The of array at position 2nd row and 3rd column with command array[1,2] is: {array[1,2]}')
 print(f'The of array at position 2nd row and 3rd column with command array[1][2] is: {array[1][2]}')
 
+tup_dim = (3, 4)
 my_zeros_array = np.zeros(tup_dim, dtype=np.int16)
 print("Note: tup_dim is a tuple with valus (3,4)")
 print("Creating zero array with np.zeros(tup_dim, dtype=np.int16): ")
@@ -74,7 +76,7 @@ print(my_identity_array)
 
 # NumPy array with all its elements values as random values (using random.rand() function of NumPy())
 my_rand_array = np.random.rand(3, 4)
-print("Creating random array with np.random.rand(3, 4)")
+print("Creating random array with np.random.rand(3, 4), by default all values will be 0 and 1")
 print(my_rand_array)
 
 # NumPy array with all its elements values as uninitialized values (initialized with some random values
@@ -87,6 +89,7 @@ print(my_uninitialized_array)
 my_range_array = np.arange(10, 30, 5)
 print("Using arange function to print numbers between 10 to 30 with a gap of 5 without including 30")
 print("Here the gap is controlled, , Not the number of values to be printed")
+print(("Here the last argurment is gap"))
 print("np.arange(10, 30, 5): ")
 print(my_range_array)
 
@@ -94,6 +97,7 @@ print(my_range_array)
 my_spaced_array = np.linspace(0, 5/3, 6)
 print("Using linspace function to print 6 numbers between 0 to 5/3 with equal gap between them")
 print("Here the number of values is controlled, no the gap. However gap is kept constant by default")
+print("Here the last argurment is the number of numbers we want")
 print("np.linspace(0, 5/3, 6): ")
 print(my_spaced_array)
 

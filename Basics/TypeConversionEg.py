@@ -8,24 +8,24 @@ print(str(bmi))
 
 #String to list of char conversion
 s = "naveen Kumar"
-myList = list(s)
-print(myList)
+dependencyGuide = list(s)
+print(dependencyGuide)
 
 #String to list of word conversion
 s = "Naveen Kumar"
-myList = s.split()
-print(myList)
+dependencyGuide = s.split()
+print(dependencyGuide)
 
 print(f'\n******** Converting list to tuple')
 #Converting a list to tuple
-myList = ["Naveen", "Kumar"]
-print(f'myList = {myList}')
+dependencyGuide = ["Naveen", "Kumar"]
+print(f'myList = {dependencyGuide}')
 print(f'(firstName, lastName) = myList')
-(firstName, lastName) = myList
+(firstName, lastName) = dependencyGuide
 print(f'(firstName, lastName) = {(firstName, lastName)}')
 
 print("\n************* Dictionary to List of tuples")
-#Conversting a dictionary to list of tuples
+#Converting a dictionary to list of tuples
 d = {"one" : 1, "two" : 2, "three" : 3}
 print(f'd = {d}')
 print(f'k = d.items()')
